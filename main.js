@@ -36,7 +36,6 @@ function draw()
         objectDetector.detect(video, gotResult)
             for (i=0; i<object.length; i++)
             {
-                document.getElementById("status").innerHTML ="status: object detected";
                 document.getElementById("number_objects").innerHTML ="number of objects detected are " + object.length
 
                 fill("orange");
@@ -50,7 +49,7 @@ function draw()
                 {
                     video.stop();
                     objectDetector.detect(gotResult);
-                    document.getElementByIdO("status").innerHTML=object_namme+"found";
+                    document.getElementById("status").innerHTML=object_namme+"found";
                     synth=window.speechSynthesis;
                     utterThis=new SpeechSynthesisUtterance(object_namme +"found");
                     synth.speak(utterThis);
